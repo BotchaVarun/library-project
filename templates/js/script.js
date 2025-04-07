@@ -1,3 +1,5 @@
+document.querySelector("button").addEventListener("click", myFunction);
+
 async function myFunction(event){
   event.preventDefault();
 var email = document.getElementById("email").value;
