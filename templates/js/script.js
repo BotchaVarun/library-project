@@ -19,10 +19,10 @@ const options = {
     {
       alert("sign in successfully");
       if(email=="varunbotcha@gmail.com"&&password==="1234"){
-        window.location.href="/templates/admin.html";
+        window.location.href="./admin.html";
       }
       else{
-      window.location.href="/templates/student.html";
+      window.location.href="./student.html";
       }
     }
     else{
@@ -52,7 +52,7 @@ async function submit() {
     if (res.ok) { 
         console.log("Account created successfully");
         console.log("The response is::::::::::::::::", res);
-        window.location.href = '/templates/sigin.html'; 
+        window.location.href = '../index.html'; 
     } else {
         console.log("Failed to create account");
 
