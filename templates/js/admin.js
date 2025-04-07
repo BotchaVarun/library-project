@@ -50,7 +50,7 @@ function books() {
 
     // Function to fetch books based on selected domain
     const fetchBooks = (domain) => {
-        fetch(`http://localhost:3001/book?domain=${domain}`)
+        fetch(`https://backend-1-qp4n.onrender.com/book?domain=${domain}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -172,7 +172,7 @@ function magazines() {
 
     // Function to fetch magazines based on selected domain
     const fetchMagazines = (domain) => {
-        fetch(`http://localhost:3001/magazine?domain=${domain}`)
+        fetch(`https://backend-1-qp4n.onrender.com/magazine?domain=${domain}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -252,7 +252,7 @@ function magazines() {
 
 function deleteBook(bookId, event) {
     console.log(bookId);
-    fetch(`http://localhost:3001/deletebook/${bookId}`, {
+    fetch(`https://backend-1-qp4n.onrender.com/deletebook/${bookId}`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -269,7 +269,7 @@ function deleteBook(bookId, event) {
 
 function deleteMagazine(magazineId, event) {
     console.log('Magazine ID:', magazineId); // Check the value of magazineId
-    fetch(`http://localhost:3001/deletemag/${magazineId}`, {
+    fetch(`https://backend-1-qp4n.onrender.com/deletemag/${magazineId}`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -321,7 +321,7 @@ function comic() {
 
     // Function to fetch comics based on selected domain
     const fetchComics = (domain) => {
-        fetch(`http://localhost:3001/comic?domain=${domain}`)
+        fetch(`https://backend-1-qp4n.onrender.com/comic?domain=${domain}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function deleteComic(comicId, event) {
     console.log('Comic ID:', comicId); // Check the value of magazineId
-    fetch(`http://localhost:3001/deletecom/${comicId}`, {
+    fetch(`https://backend-1-qp4n.onrender.com/deletecom/${comicId}`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -450,7 +450,7 @@ async function users() {
 
     try {
         // Fetch user data from backend
-        const response = await fetch('http://localhost:3001/users');
+        const response = await fetch('https://backend-1-qp4n.onrender.com/users');
         if (!response.ok) {
             throw new Error('Failed to fetch user data');
         }
@@ -473,7 +473,7 @@ async function users() {
             if (userId) {
                 try {
                     // Fetch items (books, magazines, comics) borrowed by the selected user
-                    const itemsResponse = await fetch(`http://localhost:3001/users/${userId}/items`);
+                    const itemsResponse = await fetch(`https://backend-1-qp4n.onrender.com/users/${userId}/items`);
                     if (!itemsResponse.ok) {
                         throw new Error('Failed to fetch items data');
                     }
@@ -576,7 +576,7 @@ function insertBook() {
     formData.append('price', document.getElementById('price').value);
     formData.append('domain', document.getElementById('domain').value);
      
-    fetch('http://localhost:3001/addbook', {
+    fetch('https://backend-1-qp4n.onrender.com/addbook', {
         method: 'POST',
         body: formData
     })
@@ -595,7 +595,7 @@ function insertComic() {
     formData.append('price', document.getElementById('comic-price').value);
     formData.append('domain', document.getElementById('comic-domain').value);
      
-    fetch('http://localhost:3001/addcomic', {
+    fetch('https://backend-1-qp4n.onrender.com/addcomic', {
         method: 'POST',
         body: formData
     })
@@ -626,7 +626,7 @@ function insertMagazine() {
         
         console.log(formData); // Check if FormData is constructed correctly
         
-            fetch('http://localhost:3001/addmagazine', {
+            fetch('https://backend-1-qp4n.onrender.com/addmagazine', {
                 method: 'POST',
                 body: formData
             })
@@ -653,7 +653,7 @@ async function insertUser() {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/signup", options);
+      const res = await fetch("https://backend-1-qp4n.onrender.com/signup", options);
 
       if (res.status === 201) {
         alert("User created successfully");
@@ -670,7 +670,7 @@ async function insertUser() {
   }
 // Function to fetch user details and update the profile
 const fetchUserProfile = () => {
-    fetch('http://localhost:3001/user', {
+    fetch('https://backend-1-qp4n.onrender.com/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -699,7 +699,7 @@ const fetchUserProfile = () => {
 // Function to logout (you can implement this according to your logout logic)
 
 function logout() {
-    fetch('http://localhost:3001/logout', {
+    fetch('https://backend-1-qp4n.onrender.com/logout', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

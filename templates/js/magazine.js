@@ -22,7 +22,7 @@ function magazine() {
 
     // Function to fetch books based on selected domain
     const fetchBooks = (domain) => {
-        fetch(`http://localhost:3001/magazine?domain=${domain}`)
+        fetch(`https://backend-1-qp4n.onrender.com/magazine?domain=${domain}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -84,7 +84,7 @@ function magazine() {
                 const currentStatus = buttonElement.innerText.toLowerCase() === 'borrow' ? 'available' : 'taken';
                 const newStatus = currentStatus === 'available' ? 'taken' : 'available';
 
-                fetch(`http://localhost:3001/magazine/${bookId}`, {
+                fetch(`https://backend-1-qp4n.onrender.com/magazine/${bookId}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ function magazine() {
 }
 // Function to fetch user details and update the profile
 const fetchUserProfile = () => {
-    fetch('http://localhost:3001/user', {
+    fetch('https://backend-1-qp4n.onrender.com/user', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ const fetchUserProfile = () => {
 // Function to logout (you can implement this according to your logout logic)
 
 function logout() {
-    fetch('http://localhost:3001/logout', {
+    fetch('https://backend-1-qp4n.onrender.com/logout', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

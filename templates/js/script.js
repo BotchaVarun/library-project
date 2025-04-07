@@ -14,7 +14,7 @@ const options = {
     }),
   };
   try {
-    const res = await fetch("http://localhost:3001/signin", options);
+    const res = await fetch("https://backend-1-qp4n.onrender.com/signin", options);
     if(res.status==200)
     {
       alert("sign in successfully");
@@ -48,7 +48,7 @@ async function submit() {
     }),
   };
   try {
-    const res = await fetch("http://localhost:3001/signup", options);
+    const res = await fetch("https://backend-1-qp4n.onrender.com/signup", options);
     if (res.ok) { 
         console.log("Account created successfully");
         console.log("The response is::::::::::::::::", res);
